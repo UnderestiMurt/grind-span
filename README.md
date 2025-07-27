@@ -1,2 +1,2 @@
-# Example
-An example greeter plugin
+# Grind Span
+A RuneLite plugin for calculating the estimated time needed to complete specific tasks in OSRS.
