@@ -23,13 +23,13 @@ public class GrindSpanPlugin extends Plugin
 	@Override
 	protected void startUp() throws Exception
 	{
-		log.info("Grind Span started!");
+
 	}
 
 	@Override
 	protected void shutDown() throws Exception
 	{
-		log.info("Grind Span stopped!");
+
 	}
 
 	@Provides
