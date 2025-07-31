@@ -3,17 +3,17 @@ package org.underestimurt;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.client.ui.ColorScheme;
 import net.runelite.client.ui.PluginPanel;
-import net.runelite.client.util.ImageUtil;
 import net.runelite.client.util.LinkBrowser;
 import org.underestimurt.tools.Icon;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
-import java.awt.image.BufferedImage;
 
 @Slf4j
 public class GrindTimesPanel extends PluginPanel {
+    private static final Color SUCCESS_COLOR = new Color(68, 152, 66);
+
     public GrindTimesPanel()
     {
         super(false);
@@ -21,13 +21,15 @@ public class GrindTimesPanel extends PluginPanel {
         setLayout(new BorderLayout());
         setBackground(ColorScheme.DARK_GRAY_COLOR);
 
-        addTitleBar();
+        initTitleBar();
+        initContent();
     }
 
     /**
      * Add the title bar to the layout.
      */
-    private void addTitleBar() {
+    private void initTitleBar()
+    {
         // Create panel for title bar
         JPanel titlePanel = new JPanel();
         titlePanel.setLayout(new BorderLayout());
@@ -58,5 +60,23 @@ public class GrindTimesPanel extends PluginPanel {
 
         titlePanel.add(buttonGrid, BorderLayout.EAST);
         add(titlePanel, BorderLayout.NORTH);
+    }
+
+    /**
+     * Adds the panel content to the layout.
+     */
+    private void initContent()
+    {
+        // Create panel for the plugin panel content
+        JPanel contentPanel = new JPanel();
+        contentPanel.setLayout(new BorderLayout());
+        contentPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
+
+        // Create the add grind button and add it to the content panel
+        JButton addGrindButton = new JButton("Add Grind");
+        addGrindButton.setBackground(SUCCESS_COLOR);
+        contentPanel.add(addGrindButton, BorderLayout.NORTH);
+
+        add(contentPanel, BorderLayout.CENTER);
     }
 }
