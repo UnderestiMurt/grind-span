@@ -4,14 +4,12 @@ import lombok.extern.slf4j.Slf4j;
 import net.runelite.client.ui.ColorScheme;
 import net.runelite.client.ui.PluginPanel;
 
-import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
 @Slf4j
-public class GrindSpanPanel extends PluginPanel {
+public class GrindTimesPanel extends PluginPanel {
 
-    public GrindSpanPanel()
+    public GrindTimesPanel()
     {
         super(false);
 

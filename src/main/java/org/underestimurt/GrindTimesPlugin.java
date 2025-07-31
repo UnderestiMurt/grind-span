@@ -15,31 +15,31 @@ import java.awt.image.BufferedImage;
 
 @Slf4j
 @PluginDescriptor(
-	name = "Grind Span"
+	name = "Grind Times"
 )
-public class GrindSpanPlugin extends Plugin
+public class GrindTimesPlugin extends Plugin
 {
 	@Inject
 	private Client client;
 
 	@Inject
-	private GrindSpanConfig config;
+	private GrindTimesConfig config;
 
 	@Inject
 	private ClientToolbar clientToolbar;
 
-	private GrindSpanPanel panel;
+	private GrindTimesPanel panel;
 	private NavigationButton navButton;
 
 	@Override
 	protected void startUp() throws Exception
 	{
-		panel = injector.getInstance(GrindSpanPanel.class);
+		panel = injector.getInstance(GrindTimesPanel.class);
 
 		final BufferedImage icon = ImageUtil.loadImageResource(getClass(), "clock.png");
 
 		navButton = NavigationButton.builder()
-				.tooltip("Grind Span")
+				.tooltip("Grind Times")
 				.icon(icon)
 				.panel(panel)
 				.build();
@@ -54,8 +54,8 @@ public class GrindSpanPlugin extends Plugin
 	}
 
 	@Provides
-	GrindSpanConfig provideConfig(ConfigManager configManager)
+	GrindTimesConfig provideConfig(ConfigManager configManager)
 	{
-		return configManager.getConfig(GrindSpanConfig.class);
+		return configManager.getConfig(GrindTimesConfig.class);
 	}
 }
