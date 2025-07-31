@@ -1,4 +1,4 @@
-package org.underestimurt;
+package org.underestimurt.ui;
 
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.client.ui.ColorScheme;
@@ -12,6 +12,12 @@ import java.awt.*;
 
 @Slf4j
 public class GrindTimesPanel extends PluginPanel {
+
+    /* Icons */
+    private static final ImageIcon GITHUB_ICON = Icon.GITHUB.getIcon(20, 20);
+    private static final ImageIcon BUY_ME_A_COFFEE_ICON = Icon.BUY_ME_A_COFFEE.getIcon(20, 20);
+
+    /* Colors */
     private static final Color SUCCESS_COLOR = new Color(68, 152, 66);
 
     public GrindTimesPanel()
@@ -42,8 +48,8 @@ public class GrindTimesPanel extends PluginPanel {
         JLabel title = new JLabel("Grind Times");
         titlePanel.add(title, BorderLayout.WEST);
 
-        //Create Github button and add it to the panel
-        JButton githubButton = new JButton(Icon.GITHUB.getIcon(20, 20));
+        //Create GitHub button and add it to the panel
+        JButton githubButton = new JButton(GITHUB_ICON);
         githubButton.setToolTipText("Visit the Grind Times Github repository");
         githubButton.addActionListener(
                 (e) -> LinkBrowser.browse("https://github.com/UnderestiMurt/grind-times")
@@ -51,7 +57,7 @@ public class GrindTimesPanel extends PluginPanel {
         buttonGrid.add(githubButton);
 
         //Create Buy Me A Coffee button and add it to the panel
-        JButton coffeeButton = new JButton(Icon.BUY_ME_A_COFFEE.getIcon(20, 20));
+        JButton coffeeButton = new JButton(BUY_ME_A_COFFEE_ICON);
         coffeeButton.setToolTipText("Buy me a coffee");
         coffeeButton.addActionListener(
                 (e) -> LinkBrowser.browse("https://coff.ee/underestimurt")

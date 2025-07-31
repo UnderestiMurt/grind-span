@@ -10,6 +10,7 @@ import net.runelite.client.plugins.PluginDescriptor;
 import net.runelite.client.ui.ClientToolbar;
 import net.runelite.client.ui.NavigationButton;
 import net.runelite.client.util.ImageUtil;
+import org.underestimurt.ui.GrindTimesPanel;
 
 import java.awt.image.BufferedImage;
 
